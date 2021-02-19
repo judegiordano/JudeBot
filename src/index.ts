@@ -1,10 +1,12 @@
-import { Client, Message, MessageEmbed } from "discord.js";
+import { Client, Intents, Message, MessageEmbed } from "discord.js";
 
 import config from "./helpers/config";
 import Embed from "./helpers/template";
 import Commands, { BotSettings } from "./types/Constants";
 import log from "./services/logger";
 
+const intents: Intents = new Intents();
+intents.add(Intents.ALL);
 const client: Client = new Client();
 
 client.on("ready", () => {
